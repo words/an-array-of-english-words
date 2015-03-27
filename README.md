@@ -1,7 +1,7 @@
 # an-array-of-english-words
 
 An array of ~275,000 English words derived from [the Letterpress word
-list](https://github.com/atebits/Words). Works with Node and Browserify.
+list](https://github.com/atebits/Words). Works with node, iojs, and browserify.
 
 ## Installation
 
