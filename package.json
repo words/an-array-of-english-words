@@ -1,6 +1,6 @@
 {
   "name": "an-array-of-english-words",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An array of ~275,000 English words. Works with node, iojs, and browserify.",
   "main": "words.json",
   "repository": "https://github.com/zeke/an-array-of-english-words",
