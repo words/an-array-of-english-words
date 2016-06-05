@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "An array of ~275,000 English words. Works with node, iojs, and browserify.",
   "main": "words.json",
+  "bin": {
+    "words": "./cli.js",
+    "an-array-of-english-words": "./cli.js"
+  },
   "repository": "https://github.com/zeke/an-array-of-english-words",
   "author": "zeke",
   "license": "MIT"

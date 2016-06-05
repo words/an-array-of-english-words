@@ -16,3 +16,10 @@ var words = require("an-array-of-english-words")
 var funWords = words.filter(function(w) { return !!w.match(/^fun/i) })
 console.log(funWords)
 ```
+
+There's a command-line interface (CLI) too. It prints all words to STDOUT:
+
+```sh
+npm i -g an-array-of-english-words
+words | grep cheese
+```
