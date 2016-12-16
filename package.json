@@ -1,7 +1,7 @@
 {
   "name": "an-array-of-english-words",
   "version": "1.1.0",
-  "description": "An array of ~275,000 English words. Works with node, iojs, and browserify.",
+  "description": "An array of ~275,000 English words. Works in node and browsers.",
   "main": "words.json",
   "bin": {
     "words": "./cli.js",
@@ -9,5 +9,24 @@
   },
   "repository": "https://github.com/zeke/an-array-of-english-words",
   "author": "zeke",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.js > words.json",
+    "test": "npm run build && mocha && standard"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "lodash": "^4.17.2",
+    "mocha": "^3.2.0",
+    "readlines": "^0.2.0",
+    "standard": "^8.6.0"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
+  }
 }
