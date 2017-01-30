@@ -1,8 +1,7 @@
-module.exports = (re=undefined) => {
+module.exports = (args={}) => {
   var words = require('./build.js')()
-  if (re) {
-    var re = new RegExp(re)
-    words = words.filter((word) => { return re.test(word) })
+  if (args.re) {
+    words = words.filter((word) => { return args.re.test(word) })
   }
   return words
 }

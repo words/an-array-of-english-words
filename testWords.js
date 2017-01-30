@@ -6,9 +6,8 @@ describe('words', () => {
   it('has an array of words', () => {
     expect(words()).to.be.an('array')
   })
-
   they('are grepable', () => {
-    // http://stackoverflow.com/a/17527174/2909897
-    expect(words(/^aalii$/)).to.eql(['aalii'])
+    expect(words({re: /^cool$/})).to.eql(['cool'])
+    expect(words({re: /^woot$/})).to.eql(['woot'])
   })
 })
