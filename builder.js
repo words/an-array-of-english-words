@@ -12,6 +12,7 @@ const build = chain(fs.readdirSync(basepath)
   .sort()
   .value()
 
-module.exports = () => {
-  return build 
+module.exports = {
+  build: () => { return build },
+  buildJson: () => { return JSON.stringify(build)}
 }
