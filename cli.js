@@ -18,16 +18,23 @@ main = (argv) => {
 }
 
 var version = require('./package.json').version
-var help = `Usage: words [options] RE
+var help = `Usage: words [options] [pattern]
 
 v${version}
 
 Options:
   -h, --help      Show command line help
   -v, --version   Show version info
+
+Examples:
+words '^foobar$'
+foobar
+words '^f..bar$'
+foobar
+
+Arguments:
+  pattern
+      Regular expression to search for
 `
 
 main(argv)
-
-
-
