@@ -30,6 +30,7 @@
     }
   },
   "dependencies": {
-    "epipebomb": "^1.0.0"
+    "epipebomb": "^1.0.0",
+    "minimist": "^1.2.0"
   }
 }
