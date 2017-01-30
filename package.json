@@ -28,5 +28,8 @@
     "env": {
       "mocha": true
     }
+  },
+  "dependencies": {
+    "epipebomb": "^1.0.0"
   }
 }
