@@ -2,9 +2,9 @@
 // Writes a grepable list of English words to stdout
 
 require('epipebomb')()
-const chalk = require('chalk'),
-      words = require('./words.js');
-var argv = require('minimist')(process.argv.slice(2));
+const chalk = require('chalk')
+const words = require('./words.js')
+var argv = require('minimist')(process.argv.slice(2))
 
 
 main = (argv) => {

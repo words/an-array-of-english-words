@@ -11,7 +11,7 @@
   "author": "zeke",
   "license": "MIT",
   "scripts": {
-    "build": "node build.js > words.json",
+    "build": "node scripts/build.js > words.json",
     "test": "npm run build && mocha && standard"
   },
   "devDependencies": {

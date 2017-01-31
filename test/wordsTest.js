@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const words = require('./words.js')
+const words = require('../lib/words.js')
 const they = it
 
 describe('words', () => {

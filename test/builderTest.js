@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const builder = require('./builder.js')
+const builder = require('../lib/builder.js')
 const they = it
 const words = builder.build()
 const wordsJson = builder.buildJson()
