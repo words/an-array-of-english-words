@@ -27,5 +27,25 @@ There's a CLI that prints all words to STDOUT. Install it globally:
 
 ```sh
 npm i -g an-array-of-english-words
-words | grep cheese
+```
+
+Usage:
+
+```
+words --help
+Usage: words [options] [pattern]
+
+Options:
+  -h, --help      Show command line help
+  -v, --version   Show version info
+
+Examples:
+words '^foobar$'
+foobar
+words '^f..bar$'
+foobar
+
+Arguments:
+  pattern
+      Regular expression to search for
 ```
