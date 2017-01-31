@@ -11,7 +11,7 @@
   "author": "zeke",
   "license": "MIT",
   "scripts": {
-    "build": "node build.js > words.json",
+    "build": "node scripts/build.js > words.json",
     "test": "npm run build && mocha && standard"
   },
   "devDependencies": {
@@ -28,5 +28,10 @@
     "env": {
       "mocha": true
     }
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "epipebomb": "^1.0.0",
+    "minimist": "^1.2.0"
   }
 }

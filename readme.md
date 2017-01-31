@@ -3,7 +3,7 @@
 An array of ~275,000 English words derived from [the Letterpress word
 list](https://github.com/atebits/Words). Works with node and browserify.
 
-See also [an-array-of-spanish-words])https://github.com/zeke/an-array-of-spanish-words)
+See also [an-array-of-spanish-words](https://github.com/zeke/an-array-of-spanish-words)
 
 ## Programmatic Usage
 
@@ -27,5 +27,25 @@ There's a CLI that prints all words to STDOUT. Install it globally:
 
 ```sh
 npm i -g an-array-of-english-words
-words | grep cheese
+```
+
+Usage:
+
+```
+words --help
+Usage: words [options] [pattern]
+
+Options:
+  -h, --help      Show command line help
+  -v, --version   Show version info
+
+Examples:
+words '^foobar$'
+foobar
+words '^f..bar$'
+foobar
+
+Arguments:
+  pattern
+      Regular expression to search for
 ```
