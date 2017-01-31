@@ -3,7 +3,7 @@
 An array of ~275,000 English words derived from [the Letterpress word
 list](https://github.com/atebits/Words). Works with node and browserify.
 
-See also [an-array-of-spanish-words])https://github.com/zeke/an-array-of-spanish-words)
+See also [an-array-of-spanish-words](https://github.com/zeke/an-array-of-spanish-words)
 
 ## Programmatic Usage
 
