@@ -6,20 +6,17 @@ const chalk = require('chalk')
 const words = require('./words.js')
 var argv = require('minimist')(process.argv.slice(2))
 
-
-main = (argv) => {
-  if (argv.help || argv.h)
-    process.stdout.write(help);
-  else if (argv.version || argv.v)
-    process.stdout.write(version + "\n");
-  else {
-    var re = new RegExp(argv._.shift());
-    process.stdout.write(words({re: re}).join('\n') + "\n");
-  } 
+function main (argv) {
+  if (argv.help || argv.h) { process.stdout.write(help) } else if (argv.version || argv.v) {
+    process.stdout.write(version + '\n')
+  } else {
+    var re = new RegExp(argv._.shift())
+    process.stdout.write(words({re: re}).join('\n') + '\n')
+  }
 }
 
-var version = require('./package.json').version,
-    help = `Usage: ${chalk.bold('words')} [options] [pattern]
+var version = require('./package.json').version
+var help = `Usage: ${chalk.bold('words')} [options] [pattern]
 
 v${version}
 
@@ -36,6 +33,6 @@ foobar
 Arguments:
   pattern
       Regular expression to search for
-`;
+`
 
-main(argv);
+main(argv)
