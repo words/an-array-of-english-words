@@ -3,7 +3,7 @@
 
 require('epipebomb')()
 const chalk = require('chalk')
-const words = require('./words.js')
+const words = require('./lib/words.js')
 var argv = require('minimist')(process.argv.slice(2))
 
 function main (argv) {
