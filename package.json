@@ -1,6 +1,6 @@
 {
   "name": "an-array-of-english-words",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "An array of ~275,000 English words. Works in node and browsers.",
   "main": "words.json",
   "bin": {
@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "build": "node build.js > words.json",
-    "test": "npm run build && mocha && standard --fix && standard-markdown"
+    "test": "npm run build && mocha && standard --fix && standard-markdown",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -20,7 +21,8 @@
     "mocha": "^3.5.0",
     "readlines": "^0.2.0",
     "standard": "^10.0.3",
-    "standard-markdown": "^4.0.2"
+    "standard-markdown": "^4.0.2",
+    "semantic-release": "^7.0.2"
   },
   "engines": {
     "node": ">=4"
