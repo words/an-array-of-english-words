@@ -12,14 +12,15 @@
   "license": "MIT",
   "scripts": {
     "build": "node build.js > words.json",
-    "test": "npm run build && mocha && standard"
+    "test": "npm run build && mocha && standard --fix && standard-markdown"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "lodash": "^4.17.2",
-    "mocha": "^3.2.0",
+    "mocha": "^3.5.0",
     "readlines": "^0.2.0",
-    "standard": "^8.6.0"
+    "standard": "^10.0.3",
+    "standard-markdown": "^4.0.2"
   },
   "engines": {
     "node": ">=4"
