@@ -26,4 +26,9 @@ describe('words', () => {
   they('all have length', () => {
     expect(words.every(word => word.length > 0)).to.equal(true)
   })
+
+  they('include latecomers like fuckton', () => {
+    expect(words).to.include('fuckton')
+    expect(words).to.include('fucktons')
+  })
 })
