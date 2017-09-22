@@ -7,7 +7,7 @@
     "words": "./cli.js",
     "an-array-of-english-words": "./cli.js"
   },
-  "repository": "https://github.com/zeke/an-array-of-english-words",
+  "repository": "https://github.com/words/an-array-of-english-words",
   "author": "zeke",
   "license": "MIT",
   "scripts": {
