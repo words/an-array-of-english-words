@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "build": "node build.js > words.json",
-    "test": "npm run build && mocha && standard --fix && standard-markdown",
+    "pretest": "npm run build",
+    "test": "mocha && standard --fix && standard-markdown",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
