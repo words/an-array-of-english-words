@@ -15,7 +15,7 @@ Then:
 
 ```js
 const words = require('an-array-of-english-words')
-const funWords = words.filter(w => !!w.match(/^fun/i))
+const funWords = words.filter(word => word.match(/^fun/i))
 console.log(funWords)
 ```
 
