@@ -1,34 +1,24 @@
-const expect = require('chai').expect
-const words = require('.')
-const they = it
+var test = require('tape')
+var words = require('.')
 
-describe('words', () => {
-  they('are in an array', () => {
-    expect(words).to.be.an('array')
-  })
+test('words', function(t) {
+  t.ok(Array.isArray(words), 'should be an array')
+  t.ok(words.length > 274000, 'should be more than 274k words')
+  t.ok(
+    words.every(d => typeof d === 'string'),
+    'should be all strings'
+  )
+  t.ok(
+    words.every(d => d === d.toLowerCase()),
+    'should be all lowercase'
+  )
+  t.ok(
+    words.every(d => d.length !== 0),
+    'should not be empty'
+  )
 
-  they('are over 274,000 in number', () => {
-    expect(words.length).to.be.above(274 * 1000)
-  })
+  t.ok(words.includes('fuckton'), 'should include latecomers (#1)')
+  t.ok(words.includes('fucktons'), 'should include latecomers (#2)')
 
-  they('can have one letter', () => {
-    expect(words.filter(word => word.length === 1).length).to.be.above(4)
-  })
-
-  they('can have two letters', () => {
-    expect(words.filter(word => word.length === 2).length).to.be.above(50)
-  })
-
-  they('are all lowercase', () => {
-    expect(words.every(word => word === word.toLowerCase())).to.equal(true)
-  })
-
-  they('all have length', () => {
-    expect(words.every(word => word.length > 0)).to.equal(true)
-  })
-
-  they('include latecomers like fuckton', () => {
-    expect(words).to.include('fuckton')
-    expect(words).to.include('fucktons')
-  })
+  t.end()
 })

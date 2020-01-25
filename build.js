@@ -1,15 +1,15 @@
 const fs = require('fs')
 const path = require('path')
-const chain = require('lodash').chain
-const basepath = path.join(__dirname, 'corpus')
 
-const words = chain(fs.readdirSync(basepath)
-  .map(filename => fs.readFileSync(path.join(basepath, filename), 'utf8').split('\n')))
-  .flatten()
-  .compact()
-  .map(word => word.toLowerCase())
-  .uniq()
+var root = 'corpus'
+
+var data = fs
+  .readdirSync(root)
+  .flatMap(d => String(fs.readFileSync(path.join(root, d))).split('\n'))
+  .map(d => d.toLowerCase())
+  .filter(Boolean)
   .sort()
-  .value()
 
-process.stdout.write(JSON.stringify(words))
+fs.createWriteStream('index.json').end(
+  JSON.stringify([...new Set(data)]) + '\n'
+)

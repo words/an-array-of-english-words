@@ -1,33 +1,56 @@
-# an-array-of-english-words
+# `an-array-of-english-words`
 
-An array of ~275,000 English words derived from [the Letterpress word
-list](https://github.com/atebits/Words). Works with node and browserify.
+[![Build][build-badge]][build]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
-## Programmatic Usage
+List of ~275,000 English words.
+Derived from [the Letterpress word list][letterpress].
 
-To use the module in Javascript code, install it locally:
+## Install
+
+[npm][]:
 
 ```sh
-npm install an-array-of-english-words --save
+npm install an-array-of-english-words
 ```
 
-Then:
+## Use
 
 ```js
-const words = require('an-array-of-english-words')
-const funWords = words.filter(word => word.match(/^fun/i))
-console.log(funWords)
+var words = require('an-array-of-english-words')
+
+console.log(words.filter(d => /fun/.test(d)))
 ```
 
-## Command Line Usage
+Yields:
 
-There's a CLI that prints all words to STDOUT. Install it globally:
+```js
+[
+  'antifungal',
+  'antifungals',
+  'bifunctional',
+  'cofunction',
+  'cofunctions',
+  // …and many more
+]
+```
+
+## API
+
+### `anArrayOfEnglishWords`
+
+`Array.<string>` — List of all English words, lowercased.
+
+## CLI
+
+Install the CLI globally:
 
 ```sh
 npm i -g an-array-of-english-words
 ```
 
-Run `words` to print all the words to stdout:
+Now run `words` to print all the words to stdout:
 
 ```sh
 words
@@ -35,7 +58,7 @@ words
 
 Use `grep` to filter by pattern:
 
-```
+```sh
 words | grep cheese
 ```
 
@@ -53,17 +76,43 @@ Use `wc` to find out how many `monkey` words there are:
 words | grep monkey | wc -l
 ```
 
-Ten random ten-letter words:
+Ten random ten-letter words (note: on macOS, do `brew install coreutils` to get
+[`gshuf`][shuf]):
 
 ```sh
 $ words | egrep '^.{10}$' | gshuf | head -10
 ```
 
-Note: On macOS, `brew install coreutils` to get 
-[`gshuf`](https://en.wikipedia.org/wiki/Shuf) and other goodies.
+## Related
 
-## See Also
+*   [`similar-english-words`](https://github.com/words/similar-english-words)
+*   [`an-array-of-spanish-words`](https://github.com/words/an-array-of-spanish-words)
+*   [`an-array-of-french-words`](https://github.com/words/an-array-of-french-words)
 
-- [similar-english-words](https://github.com/words/similar-english-words)
-- [an-array-of-spanish-words](https://github.com/words/an-array-of-spanish-words)
-- [an-array-of-french-words](https://github.com/words/an-array-of-french-words)
+## License
+
+[MIT][license] © [Zeke Sikelianos][author]
+
+<!-- Definition -->
+
+[build-badge]: https://img.shields.io/travis/words/an-array-of-english-words.svg
+
+[build]: https://travis-ci.org/words/an-array-of-english-words
+
+[downloads-badge]: https://img.shields.io/npm/dm/an-array-of-english-words.svg
+
+[downloads]: https://www.npmjs.com/package/an-array-of-english-words
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/an-array-of-english-words.svg
+
+[size]: https://bundlephobia.com/result?p=an-array-of-english-words
+
+[npm]: https://docs.npmjs.com/cli/install
+
+[license]: license
+
+[author]: http://zeke.sikelianos.com
+
+[letterpress]: https://github.com/lorenbrichter/Words
+
+[shuf]: https://en.wikipedia.org/wiki/Shuf

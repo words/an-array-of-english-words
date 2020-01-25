@@ -1,36 +1,62 @@
 {
   "name": "an-array-of-english-words",
   "version": "0.0.0-development",
-  "description": "An array of ~275,000 English words. Works in node and browsers.",
-  "main": "words.json",
+  "description": "List of ~275,000 English words",
+  "license": "MIT",
+  "keywords": [
+    "array",
+    "list",
+    "english",
+    "words",
+    "word"
+  ],
+  "repository": "words/an-array-of-english-words",
+  "bugs": "https://github.com/words/an-array-of-english-words/issues",
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+  "contributors": [
+    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)",
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "main": "index.json",
   "bin": {
     "words": "./cli.js",
     "an-array-of-english-words": "./cli.js"
   },
-  "repository": "https://github.com/words/an-array-of-english-words",
-  "author": "zeke",
-  "license": "MIT",
-  "scripts": {
-    "build": "node build.js > words.json",
-    "pretest": "npm run build",
-    "test": "mocha && standard --fix && standard-markdown",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
+  "files": [
+    "index.json",
+    "cli.js"
+  ],
+  "dependencies": {},
   "devDependencies": {
-    "chai": "^3.5.0",
-    "lodash": "^4.17.2",
-    "mocha": "^3.5.0",
-    "readlines": "^0.2.0",
-    "standard": "^10.0.3",
-    "standard-markdown": "^4.0.2",
-    "semantic-release": "^7.0.2"
+    "bail": "^1.0.0",
+    "concat-stream": "^2.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "tape": "^4.0.0",
+    "xo": "^0.25.0"
   },
-  "engines": {
-    "node": ">=4"
+  "scripts": {
+    "generate": "node build",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "test-api": "node test",
+    "test": "npm run format && npm run test-api"
   },
-  "standard": {
-    "env": {
-      "mocha": true
-    }
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
