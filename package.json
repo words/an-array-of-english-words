@@ -1,6 +1,6 @@
 {
   "name": "an-array-of-english-words",
-  "version": "0.0.0-development",
+  "version": "2.0.0",
   "description": "List of ~275,000 English words",
   "license": "MIT",
   "keywords": [
